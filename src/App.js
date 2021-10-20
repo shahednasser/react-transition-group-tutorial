@@ -149,7 +149,7 @@ function App() {
         <Button onClick={toggleCat}>{showCat ? 'Hide' : 'Show'} Cat</Button>
         <CSSTransition in={showCat} timeout={500} classNames={{
           enterActive: 'animate__bounceIn',
-          exit: 'animate__bounceOut'
+          exitActive: 'animate__bounceOut'
         }} 
         onEnter={showImage}
         onEntered={removeOpacity}
