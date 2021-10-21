@@ -165,8 +165,8 @@ function App() {
           <TransitionGroup>
             {languages.map(({id, name}) => (
               <CSSTransition key={id} classNames={{
-                enter: 'animate__animated animate__lightSpeedInLeft',
-                exit: 'animate__animated animate__lightSpeedOutLeft'
+                enterActive: 'animate__animated animate__lightSpeedInLeft',
+                exitActive: 'animate__animated animate__lightSpeedOutLeft'
               }} timeout={900}>
                 <li className="p-3 border mb-3 shadow-sm rounded border-info d-flex justify-content-between">
                   <span>{name}</span>
@@ -184,13 +184,11 @@ function App() {
         <h3>Mode: out-in</h3>
         <SwitchTransition mode="out-in">
           <CSSTransition key={isDanger} classNames={{
-            enter: 'animate__animated animate__flipInX',
-            exit: 'animate__animated animate__flipOutX'
+            enterActive: 'animate__animated animate__flipInX',
+            exitActive: 'animate__animated animate__flipOutX'
           }}
           timeout={500}>
-            <div>
-              <Alert variant={isDanger ? 'danger' : 'success'}>{isDanger ? "You're in danger" : "Danger cleared"}</Alert>
-            </div>
+            <Alert variant={isDanger ? 'danger' : 'success'}>{isDanger ? "You're in danger" : "Danger cleared"}</Alert>
           </CSSTransition>
         </SwitchTransition>
         <Button onClick={() => setIsDanger(!isDanger)}>
@@ -207,9 +205,7 @@ function App() {
             exit: 'animate__animated animate__flipOutX'
           }}
           timeout={500}>
-            <div>
-              <Alert variant={isDanger2 ? 'danger' : 'success'}>{isDanger2 ? "You're in danger" : "Danger cleared"}</Alert>
-            </div>
+            <Alert variant={isDanger2 ? 'danger' : 'success'}>{isDanger2 ? "You're in danger" : "Danger cleared"}</Alert>
           </CSSTransition>
         </SwitchTransition>
         <Button onClick={() => setIsDanger2(!isDanger2)}>
